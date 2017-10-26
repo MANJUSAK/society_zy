@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--@author 严彬荣，version v1.0-->
+<!--mapper 用户管理 start -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--suppress ALL -->
+<mapper namespace="com.goodsoft.society_zy.domain.dao.UserDao">
+    <!--使用mybatis二级缓存-->
+    <!--mybatis缓存-->
+    <!--<cache eviction="FIFO" flushInterval="60000" readOnly="false" size="1024"/>-->
+    <!--第三方缓存技术 ehcache-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+    <select id="loginDao" resultType="com.goodsoft.society_zy.domain.entity.user.User" parameterType="string">
+      SELECT *  FROM gs_user WHERE user_name=#{uName} and pass_word=#{pwd}
+    </select>
+    <insert id="addUserDao" parameterType="com.goodsoft.society_zy.domain.entity.user.User">
+        INSERT INTO gs_user (id,user_name,pass_word,tel,email) VALUES
+        (#{id},#{userName},#{passWord},#{tel},#{email})
+    </insert>
+</mapper>
+        <!--mapper 用户管理 end -->

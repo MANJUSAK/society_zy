@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--@author 严彬荣，version v1.0-->
+<!--mapper 模板 start -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--suppress ALL -->
+<mapper namespace="com.goodsoft.society_zy.domain.dao.HospitalDao">
+    <!--医院信息添加sql start-->
+    <insert id="addHospitalInfoDao" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
+    INSERT INTO T_SHZY_YY
+    (BH,YYMC,YYDZ,FRDB,FRDBSFZH,FRDBLXDH,SSXQ,XGR,XGSJ)
+    VALUES
+    (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},#{column8})
+    </insert>
+    <!--医院信息添加sql end-->
+    <!--医务人员信息添加sql start-->
+    <insert id="addMedicalStaffInfoDao" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
+    INSERT INTO T_SHZY_YY_YWRY
+    (BH,XM,SFZH,XB,MZ,XZZ,HJD,SJHM,GZ,SSXQ,XGR,XGSJ)
+    VALUES
+    (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},#{column8},#{column9},
+     #{column10},#{column11})
+    </insert>
+    <!--医务人员信息添加sql end-->
+    <!--就医信息添加sql start-->
+    <insert id="addConsultInfoDao" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
+    INSERT INTO T_SHZY_YY_JYXX
+    (BH,XM,XB,CSRQ,NL,SFZH,ZY,HJQH,XZZ,GZDW,GZDWDH,ZYLXR,LXRDZ,LXDH,JZRQ,RYRQ,CYRQ,JZYY,JZKS,ZZYS,
+     SSXQ,XGR,XGSJ)
+    VALUES
+    (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},#{column8},#{column9},
+     #{column10},#{column11},#{column12},#{column13},#{column14},#{column15},#{column16},#{column17},#{column18},
+     #{column19},#{column20},#{column21},#{column22})
+    </insert>
+    <!--就医信息添加sql end-->
+</mapper>
+        <!--mapper 模板 end -->
