@@ -87,7 +87,7 @@ public class HospitalServicelmpl implements HospitalService {
         sb.append(file.getPath());
             /*获取上传excel文件数据 start*/
         List<ExcelColumnInfo> sdData;
-        if (file.getPath().endsWith("xls")) {
+        if (file.getSuffix().endsWith("xls")) {
             this.readExcelXls.process(sb.toString());
             sdData = this.readExcelXls.list;
         } else {
@@ -116,7 +116,7 @@ public class HospitalServicelmpl implements HospitalService {
             HospitalDao hospitalDao = session.getMapper(HospitalDao.class);
             try {
                 for (int i = 0; i < len; ++i) {
-                    this.dao.addHospitalInfoDao(sdData.get(i));
+                    hospitalDao.addHospitalInfoDao(sdData.get(i));
                 }
                 session.commit();
             } finally {
@@ -171,7 +171,7 @@ public class HospitalServicelmpl implements HospitalService {
             /*获取上传excel文件数据 start*/
         List<ExcelColumnInfo> sdData;
         //判断excel文件格式
-        if (file.getPath().endsWith("xls")) {
+        if (file.getSuffix().endsWith("xls")) {
             this.readExcelXls.process(sb.toString());
             sdData = this.readExcelXls.list;
         } else {
@@ -254,7 +254,7 @@ public class HospitalServicelmpl implements HospitalService {
         sb.append(file.getPath());
             /*获取上传excel文件数据 start*/
         List<ExcelColumnInfo> sdData;
-        if (file.getPath().endsWith("xls")) {
+        if (file.getSuffix().endsWith("xls")) {
             this.readExcelXls.process(sb.toString());
             sdData = this.readExcelXls.list;
         } else {

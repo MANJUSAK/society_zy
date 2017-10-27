@@ -20,7 +20,7 @@
     VALUES
     (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},#{column8},#{column9},
      #{column10},#{column11},#{column12},#{column13},#{column14},#{column15},#{column16},
-     #{column17},#{column18},#{column19},#{column20},#{column21},#{column22},#{column23},#{column24})
+     #{column17},#{column18},#{column19},#{column20},#{column21},#{column22},#{column23})
     </insert>
     <!--教师信息添加sql end-->
     <!--小学学生信息添加sql start-->
@@ -40,15 +40,15 @@
     <!--初中学生信息添加sql start-->
     <insert id="addStudent_middleDao" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
     INSERT INTO T_SHZY_JY_XSXX_CZ
-    (BH,XM,CYM,XB,SFZH,MZ,RXNF,BJ,XX,XJH,XXXJH,HJSZD,JTXXDZ,HJDJYZGBM,SFGE,SFCJ,SFJS,
-    SFLSET,MQXM,MQSFZH,MQGZDW,MQLXDH,FQXM,FQSFZH,FQLXDH,FQGZDW,SJRXM1,GX1,SJRSFZH1,SJRGZDW1,
-    SJRLXDG1,SJRXM2,GX2,SJRSFZH2,SJRGZDW2,SJRLXDG2,XJZT,SSXQ,XGR,XGSJ)
+    (BH,XM,CYM,XB,SFZH,MZ,RXNF,BJ,XX,XJH,XXXJH,HJSZD,JTXXDZ,HJDJYZGBM,SFGE,SFCJ,
+    SFJS,SFLSET,MQXM,MQSFZH,MQGZDW,MQLXDH,FQXM,FQSFZH,FQLXDH,FQGZDW,SJRXM1,GX1,SJRSFZH1,
+    SJRGZDW1,SJRLXDG1,SJRXM2,GX2,SJRSFZH2,SJRGZDW2,SJRLXDG2,XJZT,SSXQ,XGR,XGSJ)
     VALUES
     (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},#{column8},#{column9},
      #{column10},#{column11},#{column12},#{column13},#{column14},#{column15},#{column16},#{column17},#{column18},
      #{column19},#{column20},#{column21},#{column22},#{column23},#{column24},#{column25},#{column26},
      #{column27},#{column28},#{column29},#{column30},#{column31},#{column32},#{column33},#{column34},#{column35},#{column36},
-     #{column37},#{column38},#{column39})
+     #{column37},#{column38}，#{column39})
     </insert>
     <!--初中学生添加sql end-->
     <!--高中学生添加sql start-->
@@ -60,8 +60,8 @@
      VALUES
      (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},#{column8},#{column9},
      #{column10},#{column11},#{column12},#{column13},#{column14},#{column15},#{column16},#{column17},#{column18},
-     #{column19},#{column20},#{column21},#{column22},#{column23},#{column24},#{column25},#{column26},
-     #{column27},#{column28},#{column29},#{column30},#{column31},#{column32},#{column33},#{column34},#{column35})
+     #{column19},#{column20},#{column21},#{column22},#{column23},#{column24},#{column25},#{column26},#{column27},#{column28},
+     #{column29},#{column30},#{column31},#{column32},#{column33},#{column34},#{column35})
     </insert>
     <!--高中学生息添加sql end-->
 </mapper>

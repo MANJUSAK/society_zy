@@ -59,7 +59,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn(String column) {
-        this.column = column == null ? null : column.trim();
+        this.column = column;
     }
 
     public String getColumn1() {
@@ -67,7 +67,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn1(String column1) {
-        this.column1 = column1 == null ? null : column1.trim();
+        this.column1 = column1;
     }
 
     public String getColumn2() {
@@ -75,7 +75,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn2(String column2) {
-        this.column2 = column2 == null ? null : column2.trim();
+        this.column2 = column2;
     }
 
     public String getColumn3() {
@@ -83,7 +83,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn3(String column3) {
-        this.column3 = column3 == null ? null : column3.trim();
+        this.column3 = column3;
     }
 
     public String getColumn4() {
@@ -91,7 +91,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn4(String column4) {
-        this.column4 = column4 == null ? null : column4.trim();
+        this.column4 = column4;
     }
 
     public String getColumn5() {
@@ -99,7 +99,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn5(String column5) {
-        this.column5 = column5 == null ? null : column5.trim();
+        this.column5 = column5;
     }
 
     public String getColumn6() {
@@ -107,7 +107,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn6(String column6) {
-        this.column6 = column6 == null ? null : column6.trim();
+        this.column6 = column6;
     }
 
     public String getColumn7() {
@@ -115,7 +115,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn7(String column7) {
-        this.column7 = column7 == null ? null : column7.trim();
+        this.column7 = column7;
     }
 
     public String getColumn8() {
@@ -123,7 +123,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn8(String column8) {
-        this.column8 = column8 == null ? null : column8.trim();
+        this.column8 = column8;
     }
 
     public String getColumn9() {
@@ -131,7 +131,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn9(String column9) {
-        this.column9 = column9 == null ? null : column9.trim();
+        this.column9 = column9;
     }
 
     public String getColumn10() {
@@ -139,7 +139,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn10(String column10) {
-        this.column10 = column10 == null ? null : column10.trim();
+        this.column10 = column10;
     }
 
     public String getColumn11() {
@@ -147,7 +147,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn11(String column11) {
-        this.column11 = column11 == null ? null : column11.trim();
+        this.column11 = column11;
     }
 
     public String getColumn12() {
@@ -155,7 +155,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn12(String column12) {
-        this.column12 = column12 == null ? null : column12.trim();
+        this.column12 = column12;
     }
 
     public String getColumn13() {
@@ -163,7 +163,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn13(String column13) {
-        this.column13 = column13 == null ? null : column13.trim();
+        this.column13 = column13;
     }
 
     public String getColumn14() {
@@ -171,7 +171,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn14(String column14) {
-        this.column14 = column14 == null ? null : column14.trim();
+        this.column14 = column14;
     }
 
     public String getColumn15() {
@@ -179,7 +179,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn15(String column15) {
-        this.column15 = column15 == null ? null : column15.trim();
+        this.column15 = column15;
     }
 
     public String getColumn16() {
@@ -187,7 +187,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn16(String column16) {
-        this.column16 = column16 == null ? null : column16.trim();
+        this.column16 = column16;
     }
 
     public String getColumn17() {
@@ -195,7 +195,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn17(String column17) {
-        this.column17 = column17 == null ? null : column17.trim();
+        this.column17 = column17;
     }
 
     public String getColumn18() {
@@ -203,7 +203,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn18(String column18) {
-        this.column18 = column18 == null ? null : column18.trim();
+        this.column18 = column18;
     }
 
     public String getColumn19() {
@@ -211,7 +211,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn19(String column19) {
-        this.column19 = column19 == null ? null : column19.trim();
+        this.column19 = column19;
     }
 
     public String getColumn20() {
@@ -219,7 +219,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn20(String column20) {
-        this.column20 = column20 == null ? null : column20.trim();
+        this.column20 = column20;
     }
 
     public String getColumn21() {
@@ -227,7 +227,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn21(String column21) {
-        this.column21 = column21 == null ? null : column21.trim();
+        this.column21 = column21;
     }
 
     public String getColumn22() {
@@ -235,7 +235,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn22(String column22) {
-        this.column22 = column22 == null ? null : column22.trim();
+        this.column22 = column22;
     }
 
     public String getColumn23() {
@@ -243,7 +243,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn23(String column23) {
-        this.column23 = column23 == null ? null : column23.trim();
+        this.column23 = column23;
     }
 
     public String getColumn24() {
@@ -251,7 +251,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn24(String column24) {
-        this.column24 = column24 == null ? null : column24.trim();
+        this.column24 = column24;
     }
 
     public String getColumn25() {
@@ -259,7 +259,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn25(String column25) {
-        this.column25 = column25 == null ? null : column25.trim();
+        this.column25 = column25;
     }
 
     public String getColumn26() {
@@ -267,15 +267,15 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn26(String column26) {
-        this.column26 = column26 == null ? null : column26.trim();
+        this.column26 = column26;
     }
 
     public String getColumn27() {
-        return column27 == null ? null : column27.trim();
+        return column27;
     }
 
     public void setColumn27(String column27) {
-        this.column27 = column27 == null ? null : column27.trim();
+        this.column27 = column27;
     }
 
     public String getColumn28() {
@@ -283,7 +283,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn28(String column28) {
-        this.column28 = column28 == null ? null : column28.trim();
+        this.column28 = column28;
     }
 
     public String getColumn29() {
@@ -291,7 +291,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn29(String column29) {
-        this.column29 = column29 == null ? null : column29.trim();
+        this.column29 = column29;
     }
 
     public String getColumn30() {
@@ -299,7 +299,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn30(String column30) {
-        this.column30 = column30 == null ? null : column30.trim();
+        this.column30 = column30;
     }
 
     public String getColumn31() {
@@ -307,7 +307,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn31(String column31) {
-        this.column31 = column31 == null ? null : column31.trim();
+        this.column31 = column31;
     }
 
     public String getColumn32() {
@@ -315,7 +315,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn32(String column32) {
-        this.column32 = column32 == null ? null : column32.trim();
+        this.column32 = column32;
     }
 
     public String getColumn33() {
@@ -323,7 +323,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn33(String column33) {
-        this.column33 = column33 == null ? null : column33.trim();
+        this.column33 = column33;
     }
 
     public String getColumn34() {
@@ -331,7 +331,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn34(String column34) {
-        this.column34 = column34 == null ? null : column34.trim();
+        this.column34 = column34;
     }
 
     public String getColumn35() {
@@ -339,7 +339,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn35(String column35) {
-        this.column35 = column35 == null ? null : column35.trim();
+        this.column35 = column35;
     }
 
     public String getColumn36() {
@@ -347,7 +347,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn36(String column36) {
-        this.column36 = column36 == null ? null : column36.trim();
+        this.column36 = column36;
     }
 
     public String getColumn37() {
@@ -355,7 +355,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn37(String column37) {
-        this.column37 = column37 == null ? null : column37.trim();
+        this.column37 = column37;
     }
 
     public String getColumn38() {
@@ -363,7 +363,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn38(String column38) {
-        this.column38 = column38 == null ? null : column38.trim();
+        this.column38 = column38;
     }
 
     public String getColumn39() {
@@ -371,7 +371,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn39(String column39) {
-        this.column39 = column39 == null ? null : column39.trim();
+        this.column39 = column39;
     }
 
     public String getColumn40() {
@@ -379,7 +379,7 @@ public class ExcelColumnInfo implements java.io.Serializable {
     }
 
     public void setColumn40(String column40) {
-        this.column40 = column40 == null ? null : column40.trim();
+        this.column40 = column40;
     }
 
     @Override

@@ -13,6 +13,7 @@
     <resultMap id="fileData" type="com.goodsoft.society_zy.domain.entity.file.FileData">
         <result property="path" column="path"/>
         <result property="bases" column="bases"/>
+        <result property="suffix" column="suffix"/>
     </resultMap>
     <!--文件查询结果映射 end-->
     <!--文件查询sql start-->
@@ -22,7 +23,7 @@
     <!--文件查询sql end-->
     <!--单文件查询sql start-->
     <select id="queryFileOneDao" parameterType="java.lang.String" resultMap="fileData">
-        SELECT path,bases FROM gs_file_data WHERE fileId=#{fileId}
+        SELECT path,bases,suffix FROM gs_file_data WHERE fileId=#{fileId}
     </select>
     <!--单文件查询sql end-->
     <!--文件信息保存sql start-->

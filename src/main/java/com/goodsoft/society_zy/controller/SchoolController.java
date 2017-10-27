@@ -1,10 +1,15 @@
 package com.goodsoft.society_zy.controller;
 
+import com.goodsoft.society_zy.domain.entity.result.Status;
+import com.goodsoft.society_zy.domain.entity.result.StatusEnum;
 import com.goodsoft.society_zy.service.SchoolService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 学校信息数据传输接口访问入口类
@@ -17,4 +22,96 @@ import javax.annotation.Resource;
 public class SchoolController {
     @Resource
     private SchoolService service;
+    //实例化日志工具管理类
+    private Logger logger = LoggerFactory.getLogger(SchoolController.class);
+
+    /**
+     * 学校信息数据录入接口
+     *
+     * @param request 请求
+     * @param files   学校信息文件
+     * @return 响应结果
+     */
+    @CrossOrigin(origins = "*", maxAge = 3600, methods = RequestMethod.POST)
+    @RequestMapping(value = "/add/school/data.shtml", method = RequestMethod.POST)
+    public Object addSchoolInfoController(HttpServletRequest request, @RequestParam("files") MultipartFile[] files) {
+        try {
+            return this.service.addSchoolInfoService(request, files);
+        } catch (Exception e) {
+            this.logger.error(e.toString());
+            return new Status(StatusEnum.EXCEL_ERROR.getCODE(), StatusEnum.EXCEL_ERROR.getEXPLAIN());
+        }
+    }
+
+    /**
+     * 教师信息数据录入接口
+     *
+     * @param request 请求
+     * @param files   教师数据文件
+     * @return 响应结果
+     */
+    @CrossOrigin(origins = "*", maxAge = 3600, methods = RequestMethod.POST)
+    @RequestMapping(value = "/add/teacher/data.shtml", method = RequestMethod.POST)
+    public Object addTeacherInfoController(HttpServletRequest request, @RequestParam("files") MultipartFile[] files) {
+        try {
+            return this.service.addTeacherInfoService(request, files);
+        } catch (Exception e) {
+            this.logger.error(e.toString());
+            return new Status(StatusEnum.EXCEL_ERROR.getCODE(), StatusEnum.EXCEL_ERROR.getEXPLAIN());
+        }
+    }
+
+    /**
+     * 高中部学生信息数据录入接口
+     *
+     * @param request 请求
+     * @param files   学生数据文件
+     * @return 响应结果
+     */
+    @CrossOrigin(origins = "*", maxAge = 3600, methods = RequestMethod.POST)
+    @RequestMapping(value = "/add/student_g/data.shtml", method = RequestMethod.POST)
+    public Object addStudentAdvancedController(HttpServletRequest request, @RequestParam("files") MultipartFile[] files) {
+        try {
+            return this.service.addStudent_advancedService(request, files);
+        } catch (Exception e) {
+            this.logger.error(e.toString());
+            return new Status(StatusEnum.EXCEL_ERROR.getCODE(), StatusEnum.EXCEL_ERROR.getEXPLAIN());
+        }
+    }
+
+    /**
+     * 初中部学生信息数据录入接口
+     *
+     * @param request 请求
+     * @param files   学生数据文件
+     * @return 响应结果
+     */
+    @CrossOrigin(origins = "*", maxAge = 3600, methods = RequestMethod.POST)
+    @RequestMapping(value = "/add/student_c/data.shtml", method = RequestMethod.POST)
+    public Object addStudentMiddleInfoController(HttpServletRequest request, @RequestParam("files") MultipartFile[] files) {
+        try {
+            return this.service.addStudent_middleService(request, files);
+        } catch (Exception e) {
+            this.logger.error(e.toString());
+            return new Status(StatusEnum.EXCEL_ERROR.getCODE(), StatusEnum.EXCEL_ERROR.getEXPLAIN());
+        }
+    }
+
+    /**
+     * 小学学生信息数据录入接口
+     *
+     * @param request 请求
+     * @param files   学生数据文件
+     * @return 响应结果
+     */
+    @CrossOrigin(origins = "*", maxAge = 3600, methods = RequestMethod.POST)
+    @RequestMapping(value = "/add/student_x/data.shtml", method = RequestMethod.POST)
+    public Object addStudentPrimaryController(HttpServletRequest request, @RequestParam("files") MultipartFile[] files) {
+        try {
+            return this.service.addStudent_primaryService(request, files);
+        } catch (Exception e) {
+            this.logger.error(e.toString());
+            return new Status(StatusEnum.EXCEL_ERROR.getCODE(), StatusEnum.EXCEL_ERROR.getEXPLAIN());
+        }
+    }
 }

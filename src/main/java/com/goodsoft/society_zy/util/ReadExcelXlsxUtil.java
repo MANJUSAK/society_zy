@@ -105,6 +105,7 @@ public class ReadExcelXlsxUtil extends DefaultHandler {
         InputSource sheetSource = new InputSource(sheet2);
         parser.parse(sheetSource);
         sheet2.close();
+        pkg.close();
     }
 
     public XMLReader fetchSheetParser(SharedStringsTable sst) throws SAXException {

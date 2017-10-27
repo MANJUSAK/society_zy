@@ -12,7 +12,9 @@ import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * description:
@@ -129,7 +131,7 @@ public class ReadExcelXlsUtil implements HSSFListener {
                 BlankRecord brec = (BlankRecord) record;
                 thisRow = brec.getRow();
                 thisColumn = brec.getColumn();
-                thisStr = "";
+                thisStr = " ";
                 rowlist.add(thisColumn, thisStr);
                 break;
             case BoolErrRecord.sid: // 单元格为布尔类型

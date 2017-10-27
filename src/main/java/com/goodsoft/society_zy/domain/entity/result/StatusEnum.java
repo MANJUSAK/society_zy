@@ -10,7 +10,7 @@ public enum StatusEnum {
     SUCCESS(0, "数据清洗成功"),
     SUCCESS_MSG(0, "数据清洗成功，但未全部成功，为你找到的错误数据已导出到文件，请下载查看！"),
     SERVER_ERROR(500, "发生不可预知的错误"),
-    EXCEL_ERROR(500, "数据清洗失败，可能原因是数据重复导致失败或其他未知错误"),
+    EXCEL_ERROR(500, "数据清洗失败，可能原因是数据重复或数据格式不正确导致失败或其他未知错误"),
     EXCEL_NO_DATA(404, "解析excel表格成功，但不是有效数据"),
     NO_EXCEL(606, "excel表格文件数据为空"),
     DEFEAT(500, "失败"),
