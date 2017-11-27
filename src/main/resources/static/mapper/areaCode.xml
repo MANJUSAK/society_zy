@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--@author 龙宏，version v1.0-->
+<!--mapper 模板 start -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--suppress ALL -->
+<mapper namespace="com.goodsoft.society_zy.domain.dao.AreaCodeDao">
+    <!-- 辖区派出所信息映射-->
+    <resultMap id="areaInfo" type="com.goodsoft.society_zy.domain.entity.resident.AreaInfo">
+        <result property="id" column="ID"/>
+        <result property="name" column="XQNAME"/>
+        <result property="code" column="CODE"/>
+        <result property="time" column="TIME"/>
+    </resultMap>
+    <!--辖区派出所编码信息添加sql start-->
+    <insert id="addAreaCode" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
+    INSERT INTO T_XQ_CODE
+    (ID,XQNAME,CODE,TIME)
+    VALUES
+    (#{column2},#{column},#{column1},to_date(#{column3},'YYYYMMDDHH24MISS'))
+    </insert>
+    <!--辖区派出所编码信息添加sql end-->
+    <!--辖区派出所编码查询sql start-->
+    <select id="findAreaCode" parameterType="java.lang.String" resultMap="areaInfo">
+        SELECT CODE FROM T_XQ_CODE WHERE XQNAME LIKE concat(concat('%',#{name}),'%')
+    </select>
+    <!--辖区派出所编码信息查询sql end-->
+
+</mapper>
+        <!--mapper 模板 end -->

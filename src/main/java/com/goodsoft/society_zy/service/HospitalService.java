@@ -34,4 +34,29 @@ public interface HospitalService {
      * @throws Exception
      */
     <T> T addConsultInfoService(HttpServletRequest request,MultipartFile[] files) throws Exception;
+
+    /**
+     * 医院信息获取
+     * @param <T>
+     * @return
+     * @throws Exception
+     */
+    <T>T addHospitalInfo() throws  Exception;
+
+    /**
+     * 医务人员信息获取
+     * @param <T>
+     * @return
+     * @throws Exception
+     */
+    <T>T addMedicalStaffInfo() throws  Exception;
+
+    /**
+     * 虹山医院 就医信息录入逻辑
+     * @param <T>
+     * @return
+     * @throws Exception
+     */
+    <T>T addTreatmentInfo() throws  Exception;
+
 }

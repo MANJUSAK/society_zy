@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据导入</title>
+</head>
+<body>
+<h1>欢迎使用</h1>
+<div>
+    <form action="http://10.164.12.196:8080/society_zy/resident/add/rensidentInfo/data.shtml" method="post" enctype="multipart/form-data">
+        <h3>小区信息</h3>
+        <input type="file" name="files"><br>
+        <input type="reset" name="" value="重置">
+        <input type="submit" name="" value="提交"><br>
+    </form>
+    <form action="http://10.164.12.196:8080/society_zy/resident/add/communityOwnerInfo/data.shtml" method="post" enctype="multipart/form-data">
+        <h3>小区业主信息</h3>
+        <input type="file" name="files"><br>
+        <input type="reset" name="" value="重置">
+        <input type="submit" name="" value="提交"><br>
+    </form>
+    <form action="http://10.164.12.196:8080/society_zy/resident/add/propertyPersonnelInfo/data.shtml" method="post" enctype="multipart/form-data">
+        <h3>小区物业信息</h3>
+        <input type="file" name="files"><br>
+        <input type="reset" name="" value="重置">
+        <input type="submit" name="" value="提交"><br>
+    </form>
+    <h1>学校</h1>
+    <form action="http://10.164.12.196:8080/society_zy/education/add/school/data.shtml" method="post" enctype="multipart/form-data">
+        <h3>学校信息</h3>
+        <input type="file" name="files"><br>
+        <input type="reset" name="" value="重置">
+        <input type="submit" name="" value="提交"><br>
+    </form>
+    <form action="http://10.164.12.196:8080/society_zy/education/add/teacher/data.shtml" method="post" enctype="multipart/form-data">
+        <h3>教师信息</h3>
+        <input type="file" name="files"><br>
+        <input type="reset" name="" value="重置">
+        <input type="submit" name="" value="提交"><br>
+    </form>
+    <form action="http://10.164.12.196:8080/society_zy/education/add/student_x/data.shtml" method="post" enctype="multipart/form-data">
+        <h3>学生信息</h3>
+        <input type="file" name="files"><br>
+        <input type="reset" name="" value="重置">
+        <input type="submit" name="" value="提交"><br>
+    </form>
+    <form action="http://10.164.12.196:8080/society_zy/resident/add/areaCode/data.shtml" method="post" enctype="multipart/form-data">
+        <h3>派出所信息</h3>
+        <input type="file" name="files"><br>
+        <input type="reset" name="" value="重置">
+        <input type="submit" name="" value="提交"><br>
+    </form>
+    <h1>供电信息录入</h1>
+    <form action="http://10.164.12.196:8080/society_zy/supply/add/account/data.shtml" method="post" enctype="multipart/form-data">
+        <h3>供电开户信息</h3>
+        <input type="file" name="files"><br>
+        <input type="reset" name="" value="重置">
+        <input type="submit" name="" value="提交"><br>
+    </form>
+    <form action="http://10.164.12.196:8080/society_zy/supply/add/reading/data.shtml" method="post" enctype="multipart/form-data">
+        <h3>供电抄表信息</h3>
+        <input type="file" name="files"><br>
+        <input type="reset" name="" value="重置">
+        <input type="submit" name="" value="提交"><br>
+    </form>
+    <a href="http://127.0.0.1:8080/resident/find/residentNum/data.shtml">查询小区数</a>
+    <a href="http://127.0.0.1:8080/hospital/find/hospital/data.shtml">获取医院信息</a>
+    <a href="http://127.0.0.1:8080/hospital/find/medical/data.shtml">获取医院人员信息</a>
+    <a href="http://127.0.0.1:8080/hospital/find/treatment/data.shtml">获取医院就医信息</a>
+</div>
+</body>
+</html>

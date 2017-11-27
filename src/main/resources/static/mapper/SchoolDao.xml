@@ -4,65 +4,70 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--suppress ALL -->
 <mapper namespace="com.goodsoft.society_zy.domain.dao.SchoolDao">
+    <!-- 学校信息映射-->
+    <resultMap id="schoolInfo" type="com.goodsoft.society_zy.domain.entity.school.SchoolInfo">
+        <result property="bh" column="BH"/>
+        <result property="xxbm" column="XXBM"/>
+        <result property="xxmc" column="XXMC"/>
+        <result property="xxdz" column="XXDZ"/>
+        <result property="frdb" column="FRDB"/>
+        <result property="frdbsfzhm" column="FRDBSFZHM"/>
+        <result property="frdblxdh" column="FRDBLXDH"/>
+        <result property="xxlb" column="XXLB"/>
+        <result property="ssqx" column="SSQX"/>
+        <result property="xgr" column="xqname"/>
+        <result property="xgsj" column="XGSJ"/>
+        <result property="rksj" column="RKSJ"/>
+    </resultMap>
     <!--学校信息添加sql start-->
     <insert id="addSchoolInfoDao" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
     INSERT INTO T_SHZY_JY_XX
-    (BH,XXMC,XXDZ,FRDB,FRDBSFZH,FRDBLXDH,XXSX,SSXQ,XGR,XGSJ)
+    (BH,XXBM,XXMC,XXDZ,FRDB,FRDBSFZHM,FRDBLXDH,XXLB,SSXQ,XGR,XGSJ,RKSJ)
     VALUES
-    (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},#{column8},#{column9})
+    (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},#{column8},#{column9},to_date(#{column10},'YYYYMMDDHH24MISS'),to_date(#{column11},'YYYYMMDDHH24MISS'))
     </insert>
     <!--学校信息添加sql end-->
     <!--教师信息添加sql start-->
     <insert id="addTeacherInfoDao" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
     INSERT INTO T_SHZY_JY_JS
-    (BH,XM,XB,CSRQ,SFZH,ZZMM,RDNY,HJDZ,XZD,GL,ZC,
-    JG,XX,RJKC,BGDH,SJHM,DYXL,ZY1,ZGXL,ZY2,BZ,SSXQ,XGR,XGSJ)
+    (BH,XXBM,XM,XB,CSRQ,SFZHM,ZZMM,HJD,XZD,GL,ZC,
+    JG,LXDH,BGDH,RJKC,DYXL,ZY1,ZGXL,ZY2,BZ,SSXQ,XGR,XGSJ,RKSJ)
     VALUES
-    (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},#{column8},#{column9},
+    (#{column},#{column1},#{column2},#{column3},to_date(#{column4},'YYYYMMDD'),#{column5},#{column6},#{column7},#{column8},#{column9},
      #{column10},#{column11},#{column12},#{column13},#{column14},#{column15},#{column16},
-     #{column17},#{column18},#{column19},#{column20},#{column21},#{column22},#{column23})
+     #{column17},#{column18},#{column19},#{column20},#{column21},to_date(#{column22},'YYYYMMDDHH24MISS'),to_date(#{column23},'YYYYMMDDHH24MISS'))
     </insert>
     <!--教师信息添加sql end-->
-    <!--小学学生信息添加sql start-->
+    <!--学生信息添加sql start-->
     <insert id="addStudent_primaryDao" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
-    INSERT INTO T_SHZY_JY_XSXX_XS
-    (BH,XM,CYM,XB,SFZH,MZ,RXNF,BJ,XX,XJH,HJSZD,JTXXDZ,HJDJYZGBM,SFGE,SFCJ,SFJS,
-    SFLSET,MQXM,MQSFZH,MQGZDW,MQLXDH,FQXM,FQSFZH,FQLXDH,FQGZDW,SJRXM1,GX1,SJRSFZH1,
-    SJRGZDW1,SJRLXDG1,SJRXM2,GX2,SJRSFZH2,SJRGZDW2,SJRLXDG2,XJZT,SSXQ,XGR,XGSJ)
-    VALUES
-    (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},#{column8},#{column9},
-     #{column10},#{column11},#{column12},#{column13},#{column14},#{column15},#{column16},#{column17},#{column18},
-     #{column19},#{column20},#{column21},#{column22},#{column23},#{column24},#{column25},#{column26},
-     #{column27},#{column28},#{column29},#{column30},#{column31},#{column32},#{column33},#{column34},#{column35},#{column36},
-     #{column37},#{column38})
+    INSERT INTO T_SHZY_JY_XSXX(BH,XXBM,XM,CYM,XB,SFZHM,MZ,RXNF,NJ,BJ,XJH,HJD,JTXXDZ,SFGE,SFCJ,SFJS,SFLSET,MQXM,MQSFZHM,MQGZDW,MQLXDH,FQXM,FQSFZHM,FQLXDH,FQGZDW,JHRXM1,JHRGX1,JHRSFZHM1,JHRGZDW1,JHRLXDH1,JHRXM2,JHRGX2,JHRSFZHM2,JHRGZDW2,JHRLXDH2,XJZT,SSXQ,XGR,XGSJ,RKSJ)
+    VALUES(#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},#{column8},#{column9},#{column10},#{column11},#{column12},#{column13},#{column14},#{column15},#{column16},#{column17},#{column18},#{column19},#{column20},#{column21},#{column22},#{column23},#{column24},#{column25},#{column26},#{column27},#{column28},#{column29},#{column30},#{column31},#{column32},#{column33},#{column34},#{column35},#{column36},#{column37},to_date(#{column38},'YYYYMMDDHH24MISS'),to_date(#{column39},'YYYYMMDDHH24MISS'))
+
     </insert>
-    <!--小学学生信息添加sql end-->
-    <!--初中学生信息添加sql start-->
-    <insert id="addStudent_middleDao" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
-    INSERT INTO T_SHZY_JY_XSXX_CZ
-    (BH,XM,CYM,XB,SFZH,MZ,RXNF,BJ,XX,XJH,XXXJH,HJSZD,JTXXDZ,HJDJYZGBM,SFGE,SFCJ,
-    SFJS,SFLSET,MQXM,MQSFZH,MQGZDW,MQLXDH,FQXM,FQSFZH,FQLXDH,FQGZDW,SJRXM1,GX1,SJRSFZH1,
-    SJRGZDW1,SJRLXDG1,SJRXM2,GX2,SJRSFZH2,SJRGZDW2,SJRLXDG2,XJZT,SSXQ,XGR,XGSJ)
-    VALUES
-    (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},#{column8},#{column9},
-     #{column10},#{column11},#{column12},#{column13},#{column14},#{column15},#{column16},#{column17},#{column18},
-     #{column19},#{column20},#{column21},#{column22},#{column23},#{column24},#{column25},#{column26},
-     #{column27},#{column28},#{column29},#{column30},#{column31},#{column32},#{column33},#{column34},#{column35},#{column36},
-     #{column37},#{column38}，#{column39})
-    </insert>
-    <!--初中学生添加sql end-->
-    <!--高中学生添加sql start-->
-    <insert id="addStudent_advancedDao" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
-    INSERT INTO T_SHZY_JY_XSXX_GZ
-    (BH,XM,CYM,XB,SFZH,MZ,RXNF,BJ,XX,XJH,HJDZ,JTCZDXXDZ,ZKCJ,MQXM,MQSFZH,MQGZDW,
-     MQLXDH,FQXM,FQSFZH,FQLXDH,FQGZDW,SJRXM1,GX1,SJRSFZH1,SJRGZDW1,SJRLXDG1,SJRXM2,GX2,
-     SJRSFZH2,SJRGZDW2,SJRLXDG2,XJZT,BZ,SSXQ,XGR,XGSJ)
-     VALUES
-     (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},#{column8},#{column9},
-     #{column10},#{column11},#{column12},#{column13},#{column14},#{column15},#{column16},#{column17},#{column18},
-     #{column19},#{column20},#{column21},#{column22},#{column23},#{column24},#{column25},#{column26},#{column27},#{column28},
-     #{column29},#{column30},#{column31},#{column32},#{column33},#{column34},#{column35})
-    </insert>
-    <!--高中学生息添加sql end-->
+    <!--学生信息添加sql end-->
+    <!--学校编码查询sql start-->
+    <select id="findSchoolCode" parameterType="java.lang.String" resultMap="schoolInfo">
+        SELECT XXBM from T_SHZY_JY_XX WHERE XXMC LIKE concat(concat('%',#{name}),'%')
+    </select>
+    <!--学校编码信息查询sql end-->
+    <!-- 数量信息映射-->
+    <resultMap id="number" type="com.goodsoft.society_zy.domain.entity.resident.Number">
+        <result property="num" column="NUM"/>
+    </resultMap>
+    <!--学校数量查询sql start-->
+    <select id="findSchoolNum" parameterType="java.lang.String" resultMap="number">
+        SELECT COUNT(*) AS NUM from T_SHZY_JY_XX
+    </select>
+    <!--学校数量查询sql end-->
+    <!--学校教师数量查询sql start-->
+    <select id="findTeacherNum" parameterType="java.lang.String" resultMap="number">
+        SELECT COUNT(*) AS NUM from T_SHZY_JY_JS
+    </select>
+    <!--学校教师数量查询sql end-->
+    <!--学校学生数量查询sql start-->
+    <select id="findStudebtNum" parameterType="java.lang.String" resultMap="number">
+        SELECT COUNT(*) AS NUM from T_SHZY_JY_XSXX
+    </select>
+    <!--学校学生数量查询sql end-->
 </mapper>
         <!--mapper 学校信息操作数据库sql mapper end -->

@@ -62,43 +62,7 @@ public class SchoolController {
     }
 
     /**
-     * 高中部学生信息数据录入接口
-     *
-     * @param request 请求
-     * @param files   学生数据文件
-     * @return 响应结果
-     */
-    @CrossOrigin(origins = "*", maxAge = 3600, methods = RequestMethod.POST)
-    @RequestMapping(value = "/add/student_g/data.shtml", method = RequestMethod.POST)
-    public Object addStudentAdvancedController(HttpServletRequest request, @RequestParam("files") MultipartFile[] files) {
-        try {
-            return this.service.addStudent_advancedService(request, files);
-        } catch (Exception e) {
-            this.logger.error(e.toString());
-            return new Status(StatusEnum.EXCEL_ERROR.getCODE(), StatusEnum.EXCEL_ERROR.getEXPLAIN());
-        }
-    }
-
-    /**
-     * 初中部学生信息数据录入接口
-     *
-     * @param request 请求
-     * @param files   学生数据文件
-     * @return 响应结果
-     */
-    @CrossOrigin(origins = "*", maxAge = 3600, methods = RequestMethod.POST)
-    @RequestMapping(value = "/add/student_c/data.shtml", method = RequestMethod.POST)
-    public Object addStudentMiddleInfoController(HttpServletRequest request, @RequestParam("files") MultipartFile[] files) {
-        try {
-            return this.service.addStudent_middleService(request, files);
-        } catch (Exception e) {
-            this.logger.error(e.toString());
-            return new Status(StatusEnum.EXCEL_ERROR.getCODE(), StatusEnum.EXCEL_ERROR.getEXPLAIN());
-        }
-    }
-
-    /**
-     * 小学学生信息数据录入接口
+     * 学生信息数据录入接口
      *
      * @param request 请求
      * @param files   学生数据文件
@@ -113,5 +77,16 @@ public class SchoolController {
             this.logger.error(e.toString());
             return new Status(StatusEnum.EXCEL_ERROR.getCODE(), StatusEnum.EXCEL_ERROR.getEXPLAIN());
         }
+    }
+
+    /**
+     * 学校数据条数
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/find/schoolNum/data.shtml")
+    @ResponseBody
+    public  Object findSchoolNum() throws  Exception{
+        return  this.service.findSchoolNum();
     }
 }

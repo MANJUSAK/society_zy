@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--@author 龙宏，version v1.0-->
+<!--mapper 模板 start -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--suppress ALL -->
+<mapper namespace="com.goodsoft.society_zy.domain.dao.PowerSupplyDao">
+    <!--供电开户信息添加sql start-->
+    <insert id="addPowerSupplyAccountInfo" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
+    INSERT INTO T_SHZY_GD_KHXX(BH,YHM,YHBM,LXR,ZJHM,LXDH,GDDH,GDDWMC,GDDWBM,GDDY,
+    DBH,YDDZ,YDLB,YHZT,ZCRQ,ZXRQ,ZXYY,DJR,DJRQ,SSXQ,XGR,XGSJ,RKSJ)
+    VALUES
+    (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},
+    #{column7},#{column8},#{column9},#{column10},#{column11},#{column12},
+    #{column13},#{column14},#{column15},#{column16},#{column17},
+    #{column18},#{column19},#{column20},to_date(#{column21},'YYYYMMDD'),to_date(#{column22},'YYYYMMDDHH24MISS'))
+    </insert>
+    <!--供电开户信息添加sql end-->
+    <!--供电抄表信息添加sql start-->
+    <insert id="addPowerSupplyReadingInfo" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
+        INSERT INTO T_SHZY_GD_CBXX(BH,YHBM,DBH,BCCBNY,BZM,BYDL,BYDF,CBY,SSXQ,XGR,XGSJ,RKSJ)
+        VALUES
+        (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},
+        #{column7},#{column8},#{column9},to_date(#{column10},'YYYYMMDD'),to_date(#{column11},'YYYYMMDDHH24MISS'))
+    </insert>
+    <!--供电抄表信息添加sql end-->
+    <!-- 数量信息映射-->
+    <resultMap id="number" type="com.goodsoft.society_zy.domain.entity.resident.Number">
+        <result property="num" column="NUM"/>
+    </resultMap>
+    <!--供电开户数量查询sql start-->
+    <select id="findAccountNum" parameterType="java.lang.String" resultMap="number">
+        SELECT COUNT(*) AS NUM from T_SHZY_GD_KHXX
+    </select>
+    <!--供电开户数量查询sql end-->
+    <!--供电抄表数量查询sql start-->
+    <select id="findReadingNum" parameterType="java.lang.String" resultMap="number">
+        SELECT COUNT(*) AS NUM from T_SHZY_GD_CBXX
+    </select>
+    <!--供电抄表数量查询sql end-->
+
+</mapper>
+        <!--mapper 模板 end -->

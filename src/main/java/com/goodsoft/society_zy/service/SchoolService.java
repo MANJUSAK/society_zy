@@ -29,26 +29,18 @@ public interface SchoolService {
     <T> T addTeacherInfoService(HttpServletRequest request, MultipartFile[] files) throws Exception;
 
     /**
-     * 高中学生信息录入
-     *
-     * @param files 学生信息文件
-     * @throws Exception
-     */
-    <T> T addStudent_advancedService(HttpServletRequest request, MultipartFile[] files) throws Exception;
-
-    /**
-     * 初中学校信息录入
-     *
-     * @param files 学生信息文件
-     * @throws Exception
-     */
-    <T> T addStudent_middleService(HttpServletRequest request, MultipartFile[] files) throws Exception;
-
-    /**
-     * 小学学生信息录入
+     * 学生信息录入
      *
      * @param files 学生信息文件
      * @throws Exception
      */
     <T> T addStudent_primaryService(HttpServletRequest request, MultipartFile[] files) throws Exception;
+
+    /**
+     * 学校信息数量
+     * @param <T>
+     * @return
+     * @throws Exception
+     */
+    public <T> T findSchoolNum() throws  Exception;
 }

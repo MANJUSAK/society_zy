@@ -1,6 +1,9 @@
 package com.goodsoft.society_zy.domain.dao;
 
 import com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo;
+import com.goodsoft.society_zy.domain.entity.resident.Number;
+import com.goodsoft.society_zy.domain.entity.school.SchoolInfo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -28,26 +31,39 @@ public interface SchoolDao {
     void addTeacherInfoDao(ExcelColumnInfo msg) throws Exception;
 
     /**
-     * 高中学生信息录入
-     *
-     * @param msg 学生信息
-     * @throws Exception
-     */
-    void addStudent_advancedDao(ExcelColumnInfo msg) throws Exception;
-
-    /**
-     * 初中学校信息录入
-     *
-     * @param msg 学生信息
-     * @throws Exception
-     */
-    void addStudent_middleDao(ExcelColumnInfo msg) throws Exception;
-
-    /**
      * 小学学生信息录入
      *
      * @param msg 学生信息
      * @throws Exception
      */
     void addStudent_primaryDao(ExcelColumnInfo msg) throws Exception;
+
+    /**
+     * 查询学校编码
+     * @param name
+     * @return
+     */
+    public SchoolInfo findSchoolCode(@Param("name") String name)throws  Exception;
+
+    /**
+     * 学校数量
+     * @return
+     * @throws Exception
+     */
+    public Number findSchoolNum()throws  Exception;
+
+    /**
+     * 教师数量
+     * @return
+     * @throws Exception
+     */
+    public Number findTeacherNum() throws  Exception;
+
+    /**
+     * 学生数量
+     * @return
+     * @throws Exception
+     */
+    public Number findStudebtNum()throws Exception;
+
 }

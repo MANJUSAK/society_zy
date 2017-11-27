@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--@author 龙宏，version v1.0-->
+<!--mapper 模板 start -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--suppress ALL -->
+<mapper namespace="com.goodsoft.society_zy.domain.dao.ResidentialDao">
+    <!--小区信息映射-->
+    <resultMap id="residentialInfo" type="com.goodsoft.society_zy.domain.entity.resident.Residential">
+        <result property="bh" column="BH"/>
+        <result property="xqbm" column="XQBM"/>
+        <result property="xqmc" column="XQMC"/>
+        <result property="xqdz" column="XQDZ"/>
+        <result property="xqwy" column="XQWY"/>
+        <result property="hs" column="HS"/>
+        <result property="ssxq" column="SSXQ"/>
+        <result property="xgr" column="XGR"/>
+        <result property="xgsj" column="XGSJ"/>
+        <result property="rksj" column="RKSJ"/>
+    </resultMap>
+    <!--小区信息映射-->
+    <resultMap id="number" type="com.goodsoft.society_zy.domain.entity.resident.Number">
+        <result property="num" column="NUM"/>
+    </resultMap>
+    <!--小区信息添加sql start-->
+    <insert id="addResidentialInfoDao" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
+    INSERT INTO T_SHZY_XQ
+    (BH,XQBM,XQMC,XQDZ,XQWY,HS,SSXQ,XGR,XGSJ,RKSJ)
+    VALUES
+    (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},to_date(#{column8},'YYYYMMDDHH24MISS'),to_date(#{column9},'YYYYMMDDHH24MISS'))
+    </insert>
+    <!--小区信息添加sql end-->
+    <!--小区业主信息添加sql start-->
+    <insert id="addCommunityOwnerInfo" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
+    INSERT INTO T_SHZY_XQ_YZ
+    (BH,XQBM,LCBH,DY,FJHM,YZXM1,YZSFZHM1,YZLXDH1,YZXM2,YZSFZHM2,YZLXDH2,XSYRXM1,XSYRSFZHM1,XSYRLXDH1,XSYRXM2,XSYRSFZHM2,XSYRLXDH2,SPMC,BZ
+,SSXQ,XGR,XGSJ,RKSJ)
+    VALUES
+    (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},#{column8},#{column9},
+     #{column10},#{column11},#{column12},#{column13},#{column14},#{column15},#{column16},#{column17},#{column18},#{column19},#{column20},to_date(#{column21},'YYYYMMDDHH24MISS'),to_date(#{column22},'YYYYMMDDHH24MISS'))
+    </insert>
+    <!--小区业主信息添加sql end-->
+    <!--小区物业人员信息添加sql start-->
+    <insert id="addPropertyPersonnelInfo" parameterType="com.goodsoft.society_zy.domain.entity.param.ExcelColumnInfo">
+    INSERT INTO T_SHZY_XQ_WYRY
+    (BH,XQBM,XM,SFZHM,LXDH,HJD,XZZ,ZW,SGSJ,BZ,SSXQ,XGR,XGSJ,RKSJ)
+    VALUES
+    (#{column},#{column1},#{column2},#{column3},#{column4},#{column5},#{column6},#{column7},to_date(#{column9},'YYYYMMDD'),#{column9},
+     #{column10},#{column11},to_date(#{column12},'YYYYMMDDHH24MISS'),to_date(#{column13},'YYYYMMDDHH24MISS'))
+    </insert>
+    <!--小区编码查询sql start-->
+    <select id="findResidentialCode" parameterType="java.lang.String" resultMap="residentialInfo">
+        SELECT XQBM FROM T_SHZY_XQ WHERE XQMC LIKE concat(concat('%',#{name}),'%')
+    </select>
+    <!--小区编码信息查询sql end-->
+    <!--小区数量查询sql start-->
+    <select id="findResidentNum" parameterType="java.lang.String" resultMap="number">
+        SELECT COUNT(*) AS NUM FROM T_SHZY_XQ
+    </select>
+    <!--小区数量信息查询sql end-->
+    <!--小区业主数量查询sql start-->
+    <select id="findOwnerNum" parameterType="java.lang.String" resultMap="number">
+        SELECT COUNT(*) AS NUM FROM T_SHZY_XQ_YZ
+    </select>
+    <!--小区业主信息查询sql end-->
+    <!--小区物业信息查询sql start-->
+    <select id="findPropertyNum" parameterType="java.lang.String" resultMap="number">
+        SELECT COUNT(*) AS NUM FROM T_SHZY_XQ_WYRY
+    </select>
+    <!--<select id="findResidentNum"  parameterType="java.util.String" resultMap="java.util.HashMap">
+         SELECT COUNT(*) AS NUM FROM T_SHZY_XQ
+    </select>-->
+
+</mapper>
+        <!--mapper 模板 end -->
